@@ -20,8 +20,11 @@ import pipeline
 env.load_env()
 LOG_TARGET = logbook.start()
 
-TITLE = "Your product's name"  # TODO
-DESCRIPTION = "One sentence: who it is for and what it does."  # TODO
+TITLE = "ExpenseFlow"
+DESCRIPTION = (
+    "For finance teams at Spanish companies: upload a business-trip receipt and pick the trip; "
+    "it checks the receipt against the trip and the expense policy and sends it to pay, to review or to reject."
+)
 
 
 def serve(raw_input: str) -> dict:
