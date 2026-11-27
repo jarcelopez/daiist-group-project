@@ -17,9 +17,10 @@ Deadline: **Mon 30 Nov 2026, 23:59**. Presentations are 1–3 Dec. The team buil
 
 - [ ] **0. Setup and deploy** — *Fri 27*
 
-  - [ ] 0.1 Put the template online under the product's name
+  - [x] 0.1 Put the template online under the product's name
     - Change `name` in `render.yaml`; set `TITLE` and `DESCRIPTION` in `app.py`
     - Create the Render Blueprint with `GEMINI_API_KEY`; confirm the placeholder app is online
+    - **Live at <https://expenseflow-vkvb.onrender.com>** (`expenseflow` was taken, so Render added `-vkvb`)
     - _Requirements: REQ-18_ · ~1 h
 
   - [ ] 0.2 Test that the trip ID survives the upload (decision D5)

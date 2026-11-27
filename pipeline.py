@@ -75,13 +75,21 @@ def component_b(text: str, a: dict) -> dict:
     return {"reply": replies[a["label"]], "tokens": 0}
 
 
+IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".heic"}
+
+
 def run(raw_input: str) -> dict:
-    text = read_input(raw_input)
-    a = component_a(text)
+    # Task 0.2 (decision D5): echo the filename we received, to check that the
+    # `__T-xxx` trip ID survives the upload through /run on Render.
+    path = Path(str(raw_input))
+    is_image = len(str(raw_input)) < 300 and path.is_file() and path.suffix.lower() in IMAGE_SUFFIXES
+    received_filename = path.name if is_image else None
+    text = "" if is_image else read_input(raw_input)
+    a = component_a(text) | {"received_filename": received_filename}
     b = component_b(text, a)
     features = input_features(text) | {"confidence": a["confidence"]}
     return {
-        "input_summary": text[:120],
+        "input_summary": f"image {received_filename}" if is_image else text[:120],
         "features": features,
         "outputs": {"component_a": a, "component_b": b},
         "versions": VERSIONS,

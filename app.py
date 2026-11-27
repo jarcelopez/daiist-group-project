@@ -84,8 +84,8 @@ with gr.Blocks(title=TITLE) as demo:
 
     with gr.Tab("App"):
         request_id = gr.State("")
-        # TODO: your input. For images: gr.Image(type="filepath"); for files: gr.File(type="filepath").
-        raw_input = gr.Textbox(label="Customer message", lines=4)
+        # Placeholder for task 0.2: the trip dropdown and the upload__<trip> copy come in task 4.1.
+        raw_input = gr.Image(type="filepath", label="Receipt photo")
         run_button = gr.Button("Run", variant="primary")
         with gr.Row():
             out_a = gr.JSON(label="Component A")
