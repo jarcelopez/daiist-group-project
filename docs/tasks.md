@@ -34,8 +34,9 @@ Deadline: **Mon 30 Nov 2026, 23:59**. Presentations are 1–3 Dec. The team buil
     - `.env.example`: `GEMINI_API_KEY`, `ROBOFLOW_API_KEY (optional)`, `DISABLE_CACHE (optional)`
     - _Requirements: REQ-18.3, REQ-18.6_ · ~0.5 h
 
-  - [ ] 0.4 Choose the Gemini model and record its prices
+  - [x] 0.4 Choose the Gemini model and record its prices
     - List the models available to a free key; pin a Flash model ID in `VERSIONS`; put the € prices and the date checked in `receipts/llm.py`
+    - **Chose `gemini-3.5-flash-lite` for vision and agent** (<1 s; 3.6 Flash took 18–298 s on the free key). €0.27 / €2.28 per 1M tokens in/out, checked 2026-11-27. Revisit at 2.4 if it misreads receipts
     - _Requirements: REQ-17, NFR-2_ · ~0.5 h
 
 - [ ] **1. Data foundations** — *Fri 27 – Sat 28*

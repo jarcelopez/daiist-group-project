@@ -24,9 +24,13 @@ of eval/cases.csv uses the same convention.
 
 from pathlib import Path
 
+from receipts import llm
+
 VERSIONS = {
     "component_a": "placeholder-keywords-v0",
     "component_b": "placeholder-template-v0",
+    "vision_model": llm.MODEL,
+    "agent_model": llm.MODEL,
 }
 
 # Placeholder thresholds. Yours must be justified in REPORT.md.
