@@ -4,17 +4,23 @@ version = "0.1.0"
 description = "DAIIST group assignment: an AI product with two connected components, deployed, logged and monitored"
 requires-python = ">=3.12,<3.13"
 dependencies = [
+    "google-genai>=3.6.1",
     "gradio>=5.0",
     "numpy>=2.0",
     "pandas>=2.2",
+    "pillow>=12.3.0",
     "psycopg[binary]>=3.2",
+    "pydantic>=2.14.3",
 ]
 
-# Only for running evaluate.ipynb locally; not installed on Render.
+# Only for local work (notebook, tests, the Tesseract comparison); not installed on Render.
+# pytesseract also needs the Tesseract program with Spanish data (`spa`) installed on your machine.
 [dependency-groups]
 dev = [
     "nbconvert>=7.16",
     "ipykernel>=6.29",
+    "pytesseract>=0.3.13",
+    "pytest>=9.2.0",
 ]
 
 [tool.uv]

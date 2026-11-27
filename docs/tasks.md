@@ -23,12 +23,13 @@ Deadline: **Mon 30 Nov 2026, 23:59**. Presentations are 1–3 Dec. The team buil
     - **Live at <https://expenseflow-vkvb.onrender.com>** (`expenseflow` was taken, so Render added `-vkvb`)
     - _Requirements: REQ-18_ · ~1 h
 
-  - [ ] 0.2 Test that the trip ID survives the upload (decision D5)
+  - [x] 0.2 Test that the trip ID survives the upload (decision D5)
     - Placeholder `run()` returns the filename it received; commit `eval/inputs/test__T-001.jpg`
     - `check.py --url <url>`: the filename must end in `__T-001.jpg`. If it doesn't, switch to a fallback (e.g. a small JSON sidecar) before building on it
+    - **Passed 2026-11-27, D5 holds:** the live `/run` (Gradio 6.31, `gr.Image(type="filepath")`) received `test__T-001.jpg` unchanged. Tested with `check.py`'s own `gradio_client` call, because `check.py --url` only reaches that step once the eval files and drift demo pass. An RGBA PNG (re-saved by Gradio) also kept its name locally
     - _Requirements: REQ-1.2, REQ-1.3_ · _Depends on: 0.1_ · ~0.5 h
 
-  - [ ] 0.3 Dependencies and keys
+  - [x] 0.3 Dependencies and keys
     - `uv add google-genai pillow pydantic`; `uv add --group dev pytesseract pytest`
     - `.env.example`: `GEMINI_API_KEY`, `ROBOFLOW_API_KEY (optional)`, `DISABLE_CACHE (optional)`
     - _Requirements: REQ-18.3, REQ-18.6_ · ~0.5 h
